@@ -1,0 +1,829 @@
+/* ------------------------------------------ 
+   General Reset
+-------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ------------------------------------------ 
+   Global Styles
+-------------------------------------------- */
+html,
+body {
+  height: 100%;
+  font-family: "Segoe UI", sans-serif;
+  color: #fff;
+  scroll-behavior: smooth; /* Smooth scrolling when clicking on nav links */
+}
+
+body {
+  background-color: #20293b; /* Nền tối cho toàn bộ trang */
+  color: #fff; /* Màu chữ sáng */
+}
+
+/* ------------------------------------------ 
+   Header Styles (Navigation Bar)
+-------------------------------------------- */
+@media (max-width: 300px) {
+  s
+  /* Style for mobile devices */
+  body {
+    font-size: 14px;
+  }
+  .nav-link {
+    font-size: 12px;
+  }
+}
+
+/* Adjust navbar layout for mobile (iPhone SE size) */
+@media (max-width: 380px) {
+  nav {
+    display: flex;
+    justify-content: space-between; /* Thay thế center thành space-between để chia đều không gian */
+    flex-wrap: nowrap; /* Cho phép các mục xuống dòng nếu cần */
+    width: 100%;
+    padding: 3px; /* Giảm padding để tiết kiệm không gian */
+  }
+
+  .nav-link {
+    font-size: 5px; /* Giảm kích thước chữ để các mục vừa với màn hình */
+    padding: 3px 0; /* Giảm padding để các mục nhỏ lại */
+    text-align: center;
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* Small screens, laptops (769px — 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Style for small screens and laptops */
+  body {
+    font-size: 18px;
+  }
+  .nav-link {
+    font-size: 16px;
+  }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #222;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 3px 0;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+/* Navbar mặc định */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+/* Khi cuộn trang, navbar đổi màu */
+.navbar.scrolled {
+  background-color: #182848;
+}
+
+/* Các mục trong navbar */
+.nav-link {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0 15px;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #f37cd1;
+}
+
+/* Thêm gạch chân khi hover */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px; /* Gạch chân sẽ xuất hiện dưới mục */
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #ffffff;
+  transform: translateX(50%);
+  transition: transform 0.3s ease, width 0.3s ease;
+}
+
+/* Khi hover vào sẽ hiển thị gạch chân */
+.nav-link:hover::after {
+  width: 0%;
+  transform: scaleX(1); /* Hiển thị gạch chân */
+}
+
+.nav-link:not(.active):hover::after {
+  width: 100%;
+  transform: scaleX(1);
+}
+
+nav .active {
+  color: #f37cd1;
+  border-bottom: 2px solid #ffffff; /* Gạch dưới đồng màu với highlight */
+}
+
+/* Các mục trong navbar */
+.navbar a {
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.navbar a:hover {
+  color: #fbc2eb;
+}
+
+/* ------------------------------------------ 
+   Section Styles (Content Sections)
+-------------------------------------------- */
+section {
+  padding: 100px 20px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h1,
+h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+/* ------------------------------------------ 
+   Profile Section Styles
+-------------------------------------------- */
+.profile-img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid #fff;
+}
+
+.about-header {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+
+.about-left,
+.about-right {
+  text-align: center;
+}
+
+/* ------------------------------------------ 
+   List and Footer Styles
+-------------------------------------------- */
+ul {
+  list-style: disc;
+  padding-left: 40px;
+  font-size: 22px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #182848;
+  color: white;
+}
+
+/* ------------------------------------------ 
+   About Section
+-------------------------------------------- */
+#about {
+  padding: 50px 20px;
+  background-color: #222; /* Nền chung */
+}
+
+#about h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.about-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.about-left {
+  text-align: left;
+}
+
+.profile-img {
+  width: 200px; /* Kích thước ảnh */
+  height: 200px;
+  border-radius: 50%; /* Bo tròn ảnh */
+  object-fit: cover; /* Cắt ảnh vừa vặn trong hình tròn */
+  border: 6px solid #fff; /* Đường viền trắng cho ảnh */
+  margin-bottom: 20px;
+}
+
+.about-right {
+  max-width: 600px; /* Giới hạn chiều rộng */
+  text-align: left;
+}
+
+.about-right ul {
+  list-style: none;
+  font-size: 1.2rem;
+  color: #fff;
+  padding-left: 20px; /* Thêm khoảng cách thụt lề trái */
+}
+
+.about-right li {
+  margin-bottom: 10px;
+}
+
+.about-right li::before {
+  content: "•";
+  color: #fbc2eb; /* Màu chấm đầu dòng */
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 380px) {
+  .about-header {
+    flex-direction: column; /* Chuyển thành cột khi màn hình nhỏ */
+    align-items: center;
+  }
+
+  .about-left,
+  .about-right {
+    text-align: center;
+  }
+
+  .about-left img {
+    margin-bottom: 15px; /* Thêm khoảng cách giữa ảnh và văn bản */
+  }
+
+  .about-right ul {
+    font-size: 1rem; /* Giảm kích thước font cho màn hình nhỏ */
+  }
+}
+
+/* ------------------------------------------ 
+   Education Section
+-------------------------------------------- */
+#education {
+  padding: 50px 20px;
+  background-color: #222; /* Nền chung */
+}
+
+#education h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  color: #fff;
+  font-weight: 700;
+}
+
+#education ul {
+  list-style: none;
+  font-size: 1.2rem;
+  color: #fff;
+  padding-left: 20px; /* Thêm khoảng cách thụt lề trái */
+  max-width: 600px; /* Giới hạn chiều rộng */
+  text-align: left;
+}
+
+#education li {
+  margin-bottom: 15px;
+}
+
+#education li::before {
+  content: "•";
+  color: #fbc2eb; /* Màu chấm đầu dòng */
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  #education ul {
+    font-size: 1rem; /* Giảm kích thước font cho màn hình nhỏ */
+  }
+
+  #education li {
+    font-size: 1rem; /* Giảm font-size cho li */
+  }
+
+  #education li::before {
+    font-size: 1.2rem; /* Giảm size đầu dòng */
+  }
+}
+
+/* ------------------------------------------ 
+   Certifications Section
+-------------------------------------------- */
+#certs {
+  padding: 50px 20px;
+  background-color: #222; /* Nền chung */
+}
+
+#certs h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.certs-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 cột */
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.cert-item {
+  background-color: #444; /* Nền cho từng chứng chỉ */
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Bỏ gạch chân cho thẻ <a> */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert-item:hover {
+  background-color: #555;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.6); /* Ánh sáng xanh */
+}
+
+.cert-content {
+  display: flex;
+  align-items: center; /* Căn giữa nội dung theo chiều dọc */
+  gap: 15px; /* Khoảng cách giữa ảnh và văn bản */
+}
+
+.cert-img {
+  width: 60px; /* Đặt chiều rộng ảnh */
+  height: 60px; /* Đặt chiều cao ảnh */
+  object-fit: cover; /* Đảm bảo ảnh không bị méo */
+  border-radius: 5px; /* Bo tròn ảnh */
+  transition: transform 0.3s ease;
+}
+
+.cert-item:hover .cert-img {
+  transform: scale(1.2); /* Phóng to ảnh khi hover vào */
+}
+
+.cert-text h3 {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 10px 0;
+}
+
+.cert-text p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.cert-item a {
+  color: #e5e5e5; /* Màu chữ dễ đọc */
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.cert-item a:hover {
+  color: #fbc2eb; /* Màu thay đổi khi hover vào liên kết */
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  .certs-container {
+    grid-template-columns: 1fr; /* Chuyển thành 1 cột khi màn hình nhỏ */
+  }
+
+  .cert-item {
+    text-align: center; /* Căn giữa nội dung */
+  }
+
+  .cert-item .year {
+    font-size: 1rem;
+  }
+
+  .cert-item h3 {
+    font-size: 1.2rem;
+  }
+
+  .cert-item p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ------------------------------------------ 
+   Skills Section Styles
+-------------------------------------------- */
+#skills {
+  background-color: #222;
+  padding: 50px 20px;
+}
+
+#skills h2 {
+  text-align: center;
+  font-size: 48px;
+  margin-bottom: 30px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.skill-category {
+  text-align: center;
+  color: white;
+}
+
+.skill-category h3 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #fbc2eb;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.skill-item {
+  text-align: center;
+  max-width: 122px; /* Set a max width to prevent text from stretching too much */
+}
+
+.skill-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+  background-color: #555;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(253, 86, 64, 0.6);
+}
+
+.skill-item p {
+  font-size: 16px;
+  color: #fff;
+  margin-top: 10px;
+  word-wrap: break-word;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 1100px) {
+  .skills-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skill-category {
+    margin-bottom: 40px;
+  }
+
+  .skills img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .skill-item p {
+    font-size: 14px;
+  }
+}
+
+/* ------------------------------------------ 
+   Projects Section
+-------------------------------------------- */
+#project {
+  padding: 50px 20px;
+  background-color: #222; /* Nền chung */
+}
+
+#project h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  color: #fff;
+  font-weight: 700;
+}
+
+#project p {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #e5e5e5;
+  margin-bottom: 40px;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(280px, 1fr)
+  ); /* Tạo các cột cho các dự án */
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.project-item {
+  background-color: #444; /* Nền cho từng dự án */
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Căn giữa nội dung theo chiều ngang */
+  justify-content: center; /* Căn giữa nội dung theo chiều dọc */
+  text-decoration: none; /* Bỏ gạch chân cho thẻ <a> */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center; /* Căn giữa nội dung */
+}
+
+.project-item:hover {
+  background-color: #555;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.6); /* Ánh sáng xanh */
+}
+
+.project-item .year {
+  font-size: 1.2rem;
+  color: #fbc2eb;
+  font-weight: bold;
+}
+
+.project-item h3 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 10px 0;
+}
+
+.project-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.project-links {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center; /* Căn giữa các nút liên kết */
+  align-items: center;
+  gap: 8px;
+}
+
+.project-links span {
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: #e5e5e5;
+}
+
+.project-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.project-links span {
+  color: #e5e5e5;
+  font-weight: 500;
+}
+
+.project-item:hover .project-icon {
+  transform: scale(1.1); /* Phóng to ảnh khi hover vào */
+}
+
+.project-links a {
+  color: #e5e5e5;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.1rem;
+}
+
+.project-links a:hover {
+  color: #fbc2eb; /* Màu thay đổi khi hover vào liên kết */
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 900px) {
+  .projects-container {
+    grid-template-columns: 1fr; /* Chuyển thành 1 cột khi màn hình nhỏ */
+  }
+
+  .project-item {
+    text-align: center; /* Căn giữa nội dung */
+  }
+
+  .project-item .year {
+    font-size: 1rem;
+  }
+
+  .project-item h3 {
+    font-size: 1.2rem;
+  }
+
+  .project-item p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ------------------------------------------ 
+   Contact Section
+-------------------------------------------- */
+#contact {
+  padding: 50px 20px;
+  background-color: #222; /* Nền chung */
+}
+
+#contact h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  color: #fff;
+  font-weight: 700;
+}
+
+#contact p {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #e5e5e5;
+  margin-bottom: 40px;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(280px, 1fr)
+  ); /* Tạo các cột cho các dự án */
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-item {
+  background-color: #444; /* Nền cho từng dự án */
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Căn giữa nội dung theo chiều ngang */
+  justify-content: center; /* Căn giữa nội dung theo chiều dọc */
+  text-decoration: none; /* Bỏ gạch chân cho thẻ <a> */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center; /* Căn giữa nội dung */
+}
+
+.contact-item:hover {
+  background-color: #555;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.6); /* Ánh sáng xanh */
+}
+
+.contact-item .contact-icon {
+  width: 60px; /* Kích thước logo */
+  height: 60px; /* Kích thước logo */
+  margin-bottom: 15px; /* Khoảng cách giữa logo và chữ */
+  object-fit: contain;
+}
+
+.contact-item span {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.contact-item a {
+  text-decoration: none; /* Bỏ gạch chân */
+  color: #e5e5e5;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-item a:hover {
+  color: #fbc2eb; /* Màu thay đổi khi hover vào liên kết */
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 900px) {
+  .contact-container {
+    grid-template-columns: 1fr; /* Chuyển thành 1 cột khi màn hình nhỏ */
+  }
+
+  .contact-item {
+    text-align: center; /* Căn giữa nội dung */
+  }
+
+  .contact-item .year {
+    font-size: 1rem;
+  }
+
+  .contact-item h3 {
+    font-size: 1.2rem;
+  }
+
+  .contact-item p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ------------------------------------------ 
+  Responsive for smaller screens 
+-------------------------------------------- */
+@media (max-width: 480px) {
+  /* Style for mobile devices */
+  body {
+    font-size: 14px;
+  }
+  .nav-link {
+    font-size: 12px;
+  }
+}
+
+/* iPads, Tablets (481px — 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  /* Style for iPads and tablets */
+  body {
+    font-size: 16px;
+  }
+  .nav-link {
+    font-size: 14px;
+  }
+}
+
+/* Small screens, laptops (769px — 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Style for small screens and laptops */
+  body {
+    font-size: 18px;
+  }
+  .nav-link {
+    font-size: 16px;
+  }
+}
+
+/* Desktops, large screens (1025px — 1200px) */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  /* Style for desktops and large screens */
+  body {
+    font-size: 20px;
+  }
+  .nav-link {
+    font-size: 18px;
+  }
+}
+
+/* Extra large screens, TV (1201px and more) */
+@media (min-width: 1201px) {
+  /* Style for extra large screens and TV */
+  body {
+    font-size: 22px;
+  }
+  .nav-link {
+    font-size: 20px;
+  }
+}
