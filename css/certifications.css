@@ -1,0 +1,103 @@
+/* ------------------------------------------ 
+   Certifications Section
+-------------------------------------------- */
+#certs {
+  padding: 50px 20px;
+  background-color: #222; /* Nền chung */
+}
+
+#certs h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.certs-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 cột */
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.cert-item {
+  background-color: #444; /* Nền cho từng chứng chỉ */
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Bỏ gạch chân cho thẻ <a> */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert-item:hover {
+  background-color: #555;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.6); /* Ánh sáng xanh */
+}
+
+.cert-content {
+  display: flex;
+  align-items: center; /* Căn giữa nội dung theo chiều dọc */
+  gap: 15px; /* Khoảng cách giữa ảnh và văn bản */
+}
+
+.cert-img {
+  width: 60px; /* Đặt chiều rộng ảnh */
+  height: 60px; /* Đặt chiều cao ảnh */
+  object-fit: cover; /* Đảm bảo ảnh không bị méo */
+  border-radius: 5px; /* Bo tròn ảnh */
+  transition: transform 0.3s ease;
+}
+
+.cert-item:hover .cert-img {
+  transform: scale(1.2); /* Phóng to ảnh khi hover vào */
+}
+
+.cert-text h3 {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 10px 0;
+}
+
+.cert-text p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.cert-item a {
+  color: #e5e5e5; /* Màu chữ dễ đọc */
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.cert-item a:hover {
+  color: #fbc2eb; /* Màu thay đổi khi hover vào liên kết */
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  .certs-container {
+    grid-template-columns: 1fr; /* Chuyển thành 1 cột khi màn hình nhỏ */
+  }
+
+  .cert-item {
+    text-align: center; /* Căn giữa nội dung */
+  }
+
+  .cert-item .year {
+    font-size: 1rem;
+  }
+
+  .cert-item h3 {
+    font-size: 1.2rem;
+  }
+
+  .cert-item p {
+    font-size: 0.9rem;
+  }
+}

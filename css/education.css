@@ -1,0 +1,50 @@
+/* ------------------------------------------ 
+   Education Section
+-------------------------------------------- */
+#education {
+  padding: 50px 20px;
+  background-color: #222; /* Nền chung */
+}
+
+#education h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  color: #fff;
+  font-weight: 700;
+}
+
+#education ul {
+  list-style: none;
+  font-size: 1.2rem;
+  color: #fff;
+  padding-left: 20px; /* Thêm khoảng cách thụt lề trái */
+  max-width: 600px; /* Giới hạn chiều rộng */
+  text-align: left;
+}
+
+#education li {
+  margin-bottom: 15px;
+}
+
+#education li::before {
+  content: "•";
+  color: #fbc2eb; /* Màu chấm đầu dòng */
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  #education ul {
+    font-size: 1rem; /* Giảm kích thước font cho màn hình nhỏ */
+  }
+
+  #education li {
+    font-size: 1rem; /* Giảm font-size cho li */
+  }
+
+  #education li::before {
+    font-size: 1.2rem; /* Giảm size đầu dòng */
+  }
+}

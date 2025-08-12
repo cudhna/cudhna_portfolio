@@ -1,0 +1,17 @@
+/* ------------------------------------------ 
+   Section Styles (Content Sections)
+-------------------------------------------- */
+section {
+  padding: 100px 20px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h1,
+h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}

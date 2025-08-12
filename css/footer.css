@@ -1,0 +1,15 @@
+/* ------------------------------------------ 
+   List and Footer Styles
+-------------------------------------------- */
+ul {
+  list-style: disc;
+  padding-left: 40px;
+  font-size: 22px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #182848;
+  color: white;
+}

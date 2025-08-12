@@ -1,0 +1,100 @@
+/* ------------------------------------------ 
+   Contact Section
+-------------------------------------------- */
+#contact {
+  padding: 50px 20px;
+  background-color: #222; /* Nền chung */
+}
+
+#contact h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  color: #fff;
+  font-weight: 700;
+}
+
+#contact p {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #e5e5e5;
+  margin-bottom: 40px;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(280px, 1fr)
+  ); /* Tạo các cột cho các dự án */
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-item {
+  background-color: #444; /* Nền cho từng dự án */
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Căn giữa nội dung theo chiều ngang */
+  justify-content: center; /* Căn giữa nội dung theo chiều dọc */
+  text-decoration: none; /* Bỏ gạch chân cho thẻ <a> */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center; /* Căn giữa nội dung */
+}
+
+.contact-item:hover {
+  background-color: #555;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.6); /* Ánh sáng xanh */
+}
+
+.contact-item .contact-icon {
+  width: 60px; /* Kích thước logo */
+  height: 60px; /* Kích thước logo */
+  margin-bottom: 15px; /* Khoảng cách giữa logo và chữ */
+  object-fit: contain;
+}
+
+.contact-item span {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.contact-item a {
+  text-decoration: none; /* Bỏ gạch chân */
+  color: #e5e5e5;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-item a:hover {
+  color: #fbc2eb; /* Màu thay đổi khi hover vào liên kết */
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 900px) {
+  .contact-container {
+    grid-template-columns: 1fr; /* Chuyển thành 1 cột khi màn hình nhỏ */
+  }
+
+  .contact-item {
+    text-align: center; /* Căn giữa nội dung */
+  }
+
+  .contact-item .year {
+    font-size: 1rem;
+  }
+
+  .contact-item h3 {
+    font-size: 1.2rem;
+  }
+
+  .contact-item p {
+    font-size: 0.9rem;
+  }
+}

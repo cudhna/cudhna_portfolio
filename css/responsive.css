@@ -1,0 +1,56 @@
+/* ------------------------------------------ 
+  Responsive for smaller screens 
+-------------------------------------------- */
+@media (max-width: 480px) {
+  /* Style for mobile devices */
+  body {
+    font-size: 14px;
+  }
+  .nav-link {
+    font-size: 12px;
+  }
+}
+
+/* iPads, Tablets (481px — 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  /* Style for iPads and tablets */
+  body {
+    font-size: 16px;
+  }
+  .nav-link {
+    font-size: 14px;
+  }
+}
+
+/* Small screens, laptops (769px — 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Style for small screens and laptops */
+  body {
+    font-size: 18px;
+  }
+  .nav-link {
+    font-size: 16px;
+  }
+}
+
+/* Desktops, large screens (1025px — 1200px) */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  /* Style for desktops and large screens */
+  body {
+    font-size: 20px;
+  }
+  .nav-link {
+    font-size: 18px;
+  }
+}
+
+/* Extra large screens, TV (1201px and more) */
+@media (min-width: 1201px) {
+  /* Style for extra large screens and TV */
+  body {
+    font-size: 22px;
+  }
+  .nav-link {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,21 @@
+/* ------------------------------------------ 
+   Profile Section Styles
+-------------------------------------------- */
+.profile-img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid #fff;
+}
+
+.about-header {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+
+.about-left,
+.about-right {
+  text-align: center;
+}

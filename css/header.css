@@ -1,0 +1,131 @@
+/* ------------------------------------------ 
+   Header Styles (Navigation Bar)
+-------------------------------------------- */
+@media (max-width: 300px) {
+  s
+  /* Style for mobile devices */
+  body {
+    font-size: 14px;
+  }
+  .nav-link {
+    font-size: 12px;
+  }
+}
+
+/* Adjust navbar layout for mobile (iPhone SE size) */
+@media (max-width: 380px) {
+  nav {
+    display: flex;
+    justify-content: space-between; /* Thay thế center thành space-between để chia đều không gian */
+    flex-wrap: nowrap; /* Cho phép các mục xuống dòng nếu cần */
+    width: 100%;
+    padding: 3px; /* Giảm padding để tiết kiệm không gian */
+  }
+
+  .nav-link {
+    font-size: 5px; /* Giảm kích thước chữ để các mục vừa với màn hình */
+    padding: 3px 0; /* Giảm padding để các mục nhỏ lại */
+    text-align: center;
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* Small screens, laptops (769px — 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Style for small screens and laptops */
+  body {
+    font-size: 18px;
+  }
+  .nav-link {
+    font-size: 16px;
+  }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #222;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 3px 0;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+/* Navbar mặc định */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+/* Khi cuộn trang, navbar đổi màu */
+.navbar.scrolled {
+  background-color: #182848;
+}
+
+/* Các mục trong navbar */
+.nav-link {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0 15px;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #f37cd1;
+}
+
+/* Thêm gạch chân khi hover */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px; /* Gạch chân sẽ xuất hiện dưới mục */
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #ffffff;
+  transform: translateX(50%);
+  transition: transform 0.3s ease, width 0.3s ease;
+}
+
+/* Khi hover vào sẽ hiển thị gạch chân */
+.nav-link:hover::after {
+  width: 0%;
+  transform: scaleX(1); /* Hiển thị gạch chân */
+}
+
+.nav-link:not(.active):hover::after {
+  width: 100%;
+  transform: scaleX(1);
+}
+
+nav .active {
+  color: #f37cd1;
+  border-bottom: 2px solid #ffffff; /* Gạch dưới đồng màu với highlight */
+}
+
+/* Các mục trong navbar */
+.navbar a {
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.navbar a:hover {
+  color: #fbc2eb;
+}

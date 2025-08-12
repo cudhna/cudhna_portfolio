@@ -1,0 +1,135 @@
+/* ------------------------------------------ 
+   Projects Section
+-------------------------------------------- */
+#project {
+  padding: 50px 20px;
+  background-color: #222; /* Nền chung */
+}
+
+#project h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  color: #fff;
+  font-weight: 700;
+}
+
+#project p {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #e5e5e5;
+  margin-bottom: 40px;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(280px, 1fr)
+  ); /* Tạo các cột cho các dự án */
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.project-item {
+  background-color: #444; /* Nền cho từng dự án */
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Căn giữa nội dung theo chiều ngang */
+  justify-content: center; /* Căn giữa nội dung theo chiều dọc */
+  text-decoration: none; /* Bỏ gạch chân cho thẻ <a> */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center; /* Căn giữa nội dung */
+}
+
+.project-item:hover {
+  background-color: #555;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.6); /* Ánh sáng xanh */
+}
+
+.project-item .year {
+  font-size: 1.2rem;
+  color: #fbc2eb;
+  font-weight: bold;
+}
+
+.project-item h3 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 10px 0;
+}
+
+.project-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.project-links {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center; /* Căn giữa các nút liên kết */
+  align-items: center;
+  gap: 8px;
+}
+
+.project-links span {
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: #e5e5e5;
+}
+
+.project-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.project-links span {
+  color: #e5e5e5;
+  font-weight: 500;
+}
+
+.project-item:hover .project-icon {
+  transform: scale(1.1); /* Phóng to ảnh khi hover vào */
+}
+
+.project-links a {
+  color: #e5e5e5;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.1rem;
+}
+
+.project-links a:hover {
+  color: #fbc2eb; /* Màu thay đổi khi hover vào liên kết */
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 900px) {
+  .projects-container {
+    grid-template-columns: 1fr; /* Chuyển thành 1 cột khi màn hình nhỏ */
+  }
+
+  .project-item {
+    text-align: center; /* Căn giữa nội dung */
+  }
+
+  .project-item .year {
+    font-size: 1rem;
+  }
+
+  .project-item h3 {
+    font-size: 1.2rem;
+  }
+
+  .project-item p {
+    font-size: 0.9rem;
+  }
+}

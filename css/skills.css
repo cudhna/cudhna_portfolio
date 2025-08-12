@@ -1,0 +1,86 @@
+/* ------------------------------------------ 
+   Skills Section Styles
+-------------------------------------------- */
+#skills {
+  background-color: #222;
+  padding: 50px 20px;
+}
+
+#skills h2 {
+  text-align: center;
+  font-size: 48px;
+  margin-bottom: 30px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.skill-category {
+  text-align: center;
+  color: white;
+}
+
+.skill-category h3 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #fbc2eb;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.skill-item {
+  text-align: center;
+  max-width: 122px; /* Set a max width to prevent text from stretching too much */
+}
+
+.skill-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+  background-color: #555;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(253, 86, 64, 0.6);
+}
+
+.skill-item p {
+  font-size: 16px;
+  color: #fff;
+  margin-top: 10px;
+  word-wrap: break-word;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 1100px) {
+  .skills-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skill-category {
+    margin-bottom: 40px;
+  }
+
+  .skills img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .skill-item p {
+    font-size: 14px;
+  }
+}

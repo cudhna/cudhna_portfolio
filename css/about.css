@@ -1,0 +1,80 @@
+/* ------------------------------------------ 
+   About Section
+-------------------------------------------- */
+#about {
+  padding: 50px 20px;
+  background-color: #222; /* Nền chung */
+}
+
+#about h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.about-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.about-left {
+  text-align: left;
+}
+
+.profile-img {
+  width: 200px; /* Kích thước ảnh */
+  height: 200px;
+  border-radius: 50%; /* Bo tròn ảnh */
+  object-fit: cover; /* Cắt ảnh vừa vặn trong hình tròn */
+  border: 6px solid #fff; /* Đường viền trắng cho ảnh */
+  margin-bottom: 20px;
+}
+
+.about-right {
+  max-width: 600px; /* Giới hạn chiều rộng */
+  text-align: left;
+}
+
+.about-right ul {
+  list-style: none;
+  font-size: 1.2rem;
+  color: #fff;
+  padding-left: 20px; /* Thêm khoảng cách thụt lề trái */
+}
+
+.about-right li {
+  margin-bottom: 10px;
+}
+
+.about-right li::before {
+  content: "•";
+  color: #fbc2eb; /* Màu chấm đầu dòng */
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 380px) {
+  .about-header {
+    flex-direction: column; /* Chuyển thành cột khi màn hình nhỏ */
+    align-items: center;
+  }
+
+  .about-left,
+  .about-right {
+    text-align: center;
+  }
+
+  .about-left img {
+    margin-bottom: 15px; /* Thêm khoảng cách giữa ảnh và văn bản */
+  }
+
+  .about-right ul {
+    font-size: 1rem; /* Giảm kích thước font cho màn hình nhỏ */
+  }
+}

@@ -1,0 +1,15 @@
+/* ------------------------------------------ 
+   Global Styles
+-------------------------------------------- */
+html,
+body {
+  height: 100%;
+  font-family: "Segoe UI", sans-serif;
+  color: #fff;
+  scroll-behavior: smooth; /* Smooth scrolling when clicking on nav links */
+}
+
+body {
+  background-color: #20293b; /* Nền tối cho toàn bộ trang */
+  color: #fff; /* Màu chữ sáng */
+}
